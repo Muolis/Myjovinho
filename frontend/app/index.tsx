@@ -234,6 +234,7 @@ export default function MeuJovinhoGame() {
 
   const resetPlayer = () => {
     const initialY = SCREEN_HEIGHT - GAME_CONFIG.GROUND_HEIGHT - GAME_CONFIG.PLAYER_SIZE;
+    console.log('Resetting player to:', { x: 50, y: initialY, screen: SCREEN_HEIGHT });
     setPlayer({
       x: 50,
       y: initialY,
