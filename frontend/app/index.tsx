@@ -490,6 +490,9 @@ export default function MeuJovinhoGame() {
           <Text style={styles.progressText}>
             Obstáculos: {obstaclesPassed}/{GAME_CONFIG.OBSTACLES_PER_LEVEL}
           </Text>
+          <Text style={styles.debugText}>
+            Player: ({Math.round(player.x)}, {Math.round(player.y)}) | Obs: {obstacles.length} | Items: {items.length}
+          </Text>
         </View>
         
         {/* Game world */}
