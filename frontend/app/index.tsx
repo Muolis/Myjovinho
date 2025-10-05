@@ -209,6 +209,11 @@ export default function MeuJovinhoGame() {
     setObstaclesPassed(0);
     setCollectedItems(0);
     
+    // Clear any existing intervals
+    if (gameLoopRef.current) {
+      clearInterval(gameLoopRef.current);
+    }
+    
     const newObstacles = generateObstacles(currentLevel);
     const newItems = generateItems(currentLevel);
     
@@ -216,7 +221,11 @@ export default function MeuJovinhoGame() {
     setItems(newItems);
     
     resetPlayer();
-    startGameLoop();
+    
+    // Start game loop after a small delay to ensure state is updated
+    setTimeout(() => {
+      startGameLoop();
+    }, 100);
   };
 
   const resetPlayer = () => {
