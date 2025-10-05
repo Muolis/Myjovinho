@@ -167,13 +167,13 @@ export default function MeuJovinhoGame() {
   const generateObstacles = (level: number): Obstacle[] => {
     const obstacles: Obstacle[] = [];
     const obstacleTypes: ObstacleType[] = ['trash', 'cigarette', 'mud'];
-    const spacing = (SCREEN_WIDTH * 3) / GAME_CONFIG.OBSTACLES_PER_LEVEL;
+    const spacing = Math.max(100, 200 - (level * 10)); // Closer spacing as level increases
     
     for (let i = 0; i < GAME_CONFIG.OBSTACLES_PER_LEVEL; i++) {
       const type = obstacleTypes[Math.floor(Math.random() * obstacleTypes.length)];
       obstacles.push({
         id: `obstacle-${i}`,
-        x: SCREEN_WIDTH + (i * spacing) + Math.random() * 100,
+        x: SCREEN_WIDTH + 100 + (i * spacing),
         y: SCREEN_HEIGHT - GAME_CONFIG.GROUND_HEIGHT - GAME_CONFIG.OBSTACLE_HEIGHT,
         width: GAME_CONFIG.OBSTACLE_WIDTH,
         height: GAME_CONFIG.OBSTACLE_HEIGHT,
