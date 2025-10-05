@@ -205,6 +205,7 @@ export default function MeuJovinhoGame() {
   };
 
   const startGame = () => {
+    console.log('Starting game...');
     setGameState('playing');
     setObstaclesPassed(0);
     setCollectedItems(0);
@@ -216,6 +217,9 @@ export default function MeuJovinhoGame() {
     
     const newObstacles = generateObstacles(currentLevel);
     const newItems = generateItems(currentLevel);
+    
+    console.log('Generated obstacles:', newObstacles.length);
+    console.log('Generated items:', newItems.length);
     
     setObstacles(newObstacles);
     setItems(newItems);
