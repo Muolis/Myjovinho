@@ -752,6 +752,11 @@ const styles = StyleSheet.create({
     color: '#e5e7eb',
     fontSize: 14,
   },
+  debugText: {
+    color: '#fbbf24',
+    fontSize: 12,
+    marginTop: 5,
+  },
   gameWorld: {
     flex: 1,
     position: 'relative',
