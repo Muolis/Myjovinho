@@ -186,15 +186,15 @@ export default function MeuJovinhoGame() {
   const generateItems = (level: number): Item[] => {
     const items: Item[] = [];
     const itemTypes: ItemType[] = ['book', 'apple', 'cross', 'toothbrush'];
-    const itemCount = Math.min(6 + level, 15);
-    const spacing = (SCREEN_WIDTH * 2.5) / itemCount;
+    const itemCount = Math.min(8 + level, 12);
+    const spacing = 120; // Fixed spacing between items
     
     for (let i = 0; i < itemCount; i++) {
       const type = itemTypes[Math.floor(Math.random() * itemTypes.length)];
       items.push({
         id: `item-${i}`,
-        x: SCREEN_WIDTH + (i * spacing) + Math.random() * 150,
-        y: SCREEN_HEIGHT - GAME_CONFIG.GROUND_HEIGHT - GAME_CONFIG.ITEM_SIZE - 20 - (Math.random() * 40),
+        x: SCREEN_WIDTH + 80 + (i * spacing) + (Math.random() * 50),
+        y: SCREEN_HEIGHT - GAME_CONFIG.GROUND_HEIGHT - GAME_CONFIG.ITEM_SIZE - 30 - (Math.random() * 60),
         width: GAME_CONFIG.ITEM_SIZE,
         height: GAME_CONFIG.ITEM_SIZE,
         type,
