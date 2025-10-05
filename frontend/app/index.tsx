@@ -502,7 +502,21 @@ export default function MeuJovinhoGame() {
           <Text style={[styles.cloud, { left: '30%', top: '10%' }]}>☁️</Text>
           
           {/* Player */}
-          {renderPlayer()}
+          <View
+            style={[
+              styles.player,
+              {
+                left: player.x,
+                top: player.y,
+              }
+            ]}
+          >
+            <View style={styles.playerBody}>
+              <View style={styles.playerCape} />
+              <View style={styles.playerGlasses} />
+              <Text style={styles.playerLetter}>C</Text>
+            </View>
+          </View>
           
           {/* Obstacles */}
           {obstacles.map(obstacle => (
