@@ -394,12 +394,12 @@ export default function MeuJovinhoGame() {
   };
 
   const renderPlayer = () => (
-    <Animated.View
+    <View
       style={[
         styles.player,
         {
           left: player.x,
-          top: playerY,
+          top: player.y,
         }
       ]}
     >
@@ -408,7 +408,7 @@ export default function MeuJovinhoGame() {
         <View style={styles.playerGlasses} />
         <Text style={styles.playerLetter}>C</Text>
       </View>
-    </Animated.View>
+    </View>
   );
 
   const renderCapybara = () => {
